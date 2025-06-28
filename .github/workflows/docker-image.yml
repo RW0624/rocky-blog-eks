@@ -21,7 +21,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ${{ secrets.REGISTRY }}:$(date +%s)
-        docker push ${{ secrets.REGISTRY }}:$(date +%s)
+        docker build . --file Dockerfile --tag ${{ env.REGISTRY }}:$(date +%s)
+        docker push ${{ env.REGISTRY }}:$(date +%s)
 
       
