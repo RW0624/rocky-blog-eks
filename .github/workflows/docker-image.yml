@@ -20,7 +20,6 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ${{vars.REGISTRY}}:$(date +%s)
-        docker push ${{vars.REGISTRY}}:$(date +%s)
-
+        docker build . --file Dockerfile --tag ${{vars.REGISTRY}}:$GITHUB_SHA
+        docker push ${{vars.REGISTRY}}:$GITHUB_SHA
       
