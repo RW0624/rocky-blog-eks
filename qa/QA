@@ -102,4 +102,15 @@ I promote DevOps culture—collaborating early in the development cycle, joining
 
 ---
 
-Let me know if you'd like **behavioral questions**, **scenario-based questions**, or **customized mock interview** sessions too!
+| Area            | AI Use Case                     | AWS Examples             |
+| --------------- | ------------------------------- | ------------------------ |
+| Monitoring      | Anomaly detection               | CloudWatch, Datadog      |
+| Troubleshooting | Root cause analysis             | Sumo Logic, Logz.io      |
+| Cost Mgmt       | Rightsizing, auto-scaling       | Compute Optimizer        |
+| CI/CD           | Smart pipelines, test selection | GitHub Actions + Copilot |
+| IaC             | Terraform/Helm generation       | CodeWhisperer, ChatGPT   |
+| Security        | Threat detection, IAM tuning    | GuardDuty, Macie         |
+| ChatOps         | Slack bots, runbook assistants  | Lex + Lambda + ChatGPT   |
+| Documentation   | Auto-gen docs, FAQs             | Confluence + LLMs        |
+
+
