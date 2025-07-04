@@ -1,0 +1,105 @@
+Here’s a list of **potential interview questions** (with **sample answers**) based on the job description you provided, focusing on DevOps, AWS, Infrastructure as Code, CI/CD, and relevant tools and soft skills:
+
+---
+
+### ⚙️ **DevOps & AWS Expertise**
+
+**Q1: Explain how you’ve used AWS, Terraform, and Kubernetes together in a production environment.**
+
+**A:**
+In my previous role, I used Terraform to provision and manage AWS infrastructure, including VPCs, subnets, RDS, and MSK. I also used Terraform modules to deploy and configure Kubernetes clusters using EKS. Once the infrastructure was in place, I managed application deployments with Helm charts and ArgoCD on Kubernetes. Terraform allowed consistent, version-controlled infrastructure, and Kubernetes provided scalability and high availability.
+
+---
+
+**Q2: How do you manage secrets in a Kubernetes environment running on AWS?**
+
+**A:**
+I use AWS Secrets Manager or AWS Parameter Store for secret management. These secrets are integrated with Kubernetes using external-secrets or sealed-secrets controllers. This avoids hardcoding secrets in YAML files. IAM roles for service accounts (IRSA) are used for secure access, eliminating the need to store credentials in pods.
+
+---
+
+**Q3: What’s your approach to designing a secure and highly available VPC on AWS?**
+
+**A:**
+I design the VPC with multiple public and private subnets across different Availability Zones for high availability. I place load balancers and NAT gateways in public subnets and EC2 instances, RDS, and other internal resources in private subnets. I use security groups and NACLs to enforce least privilege, and enable VPC flow logs for auditing traffic.
+
+---
+
+### 🛠️ **CI/CD, Monitoring, Tools, and Automation**
+
+**Q4: Describe a CI/CD pipeline you’ve built using GitHub Actions and ArgoCD.**
+
+**A:**
+I configured GitHub Actions to lint, test, build, and push Docker images to Amazon ECR. Post successful build, it updated Helm values or Kubernetes manifests in a GitOps repo. ArgoCD was set up to monitor that repo and apply changes to the Kubernetes cluster automatically, enabling safe, version-controlled deployment workflows.
+
+---
+
+**Q5: How do you monitor and troubleshoot issues in a production Kubernetes cluster?**
+
+**A:**
+I integrate Datadog for metrics and alerts, and Sumo Logic for log aggregation. For Kubernetes, I monitor pod health, node conditions, and system-level metrics. I set up dashboards for CPU, memory, and request latency. When troubleshooting, I start with logs (`kubectl logs`, Sumo dashboards), check events, and use `kubectl describe` for context.
+
+---
+
+**Q6: How do you ensure cost-efficiency in AWS environments?**
+
+**A:**
+I use AWS Cost Explorer and set budgets with alerts. On the infrastructure side, I use auto-scaling (ECS/K8s with Karpenter), spot instances where applicable, and optimize storage (e.g., S3 lifecycle rules, RDS snapshots). I also review unused resources monthly via tagging strategies and automation scripts.
+
+---
+
+### 🧠 **Coding & Infrastructure as Code**
+
+**Q7: How do you structure Terraform modules for reusability and scalability?**
+
+**A:**
+I follow a modular approach—each resource type (e.g., VPC, RDS, EKS) is its own module. Variables and outputs are well-documented. I use workspaces for environments (dev/staging/prod). I also use remote state with state locking via S3 and DynamoDB, ensuring consistency in team environments.
+
+---
+
+**Q8: What kind of code have you written as part of your DevOps role?**
+
+**A:**
+I’ve written Python scripts for automation (e.g., AWS cleanup, health checks), Bash scripts for provisioning, and Go for writing Kubernetes operators. I’ve also contributed to Helm charts and written custom Kubernetes admission controllers. All code is versioned and tested through CI.
+
+---
+
+### 🔐 **Security & Network**
+
+**Q9: How do you secure Kubernetes clusters running on AWS?**
+
+**A:**
+
+* Use EKS with private API server endpoint
+* Limit `kubectl` access via IAM policies
+* Use PodSecurityPolicies or OPA/Gatekeeper for workload restrictions
+* Enable audit logging
+* Enforce image scanning (e.g., with Trivy or ECR scan)
+* Use security contexts in manifests to avoid privileged containers
+
+---
+
+**Q10: What’s your approach to managing access to AWS environments?**
+
+**A:**
+I use IAM roles with least privilege policies. For team access, I use AWS SSO integrated with an identity provider. Access keys are discouraged; temporary credentials or roles via STS are preferred. I also audit access using CloudTrail and guardrails via SCPs (Service Control Policies) in organizations.
+
+---
+
+### 🧠 **Soft Skills & Tech Agility**
+
+**Q11: How do you use AI tools in your daily DevOps work?**
+
+**A:**
+I use tools like ChatGPT and GitHub Copilot for generating Terraform modules, writing YAML templates, or troubleshooting error messages. These tools boost productivity, especially when writing repetitive configurations or exploring unfamiliar APIs. I always review the output for accuracy and compliance.
+
+---
+
+**Q12: How do you ensure smooth collaboration with developers and other stakeholders?**
+
+**A:**
+I promote DevOps culture—collaborating early in the development cycle, joining sprint planning, and providing clear documentation. I use tools like Confluence, Slack, and Jira. I explain technical concepts in business terms and advocate for automation as a shared responsibility between teams.
+
+---
+
+Let me know if you'd like **behavioral questions**, **scenario-based questions**, or **customized mock interview** sessions too!
